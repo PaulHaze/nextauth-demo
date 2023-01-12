@@ -1,0 +1,47 @@
+{
+  "eslint.workingDirectories": ["../../nextjs-enterprise-starter"],
+  "eslint.run": "onSave",
+  // "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascriptreact",
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  // SETTINGS FROM THEIR FILE
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "search.exclude": {
+    "package-lock.json": true
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.addMissingImports"],
+  "jest.autoRun": {
+    "watch": true, // Start the jest with the watch flag
+    "onStartup": ["all-tests"] // Run all tests upon project launch
+  },
+  "jest.showCoverageOnLoad": true, // Show code coverage when the project is launched
+  "jest.showTerminalOnLaunch": false, // Don't automatically open test explorer terminal on launch
+  // Multiple language settings for json and jsonc files
+  "[json][jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
