@@ -1,5 +1,5 @@
 {
-  "eslint.workingDirectories": ["../../nextjs-enterprise-starter"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
   "eslint.run": "onSave",
   // "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   // "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -43,5 +43,6 @@
   "[json][jsonc]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
