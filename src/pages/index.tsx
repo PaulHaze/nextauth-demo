@@ -1,15 +1,15 @@
 import type { NextPage } from 'next';
-import { Meta, MainLayout } from '@/layouts';
+import { MainLayout } from '@/layouts';
 
 const Home: NextPage = () => {
   return (
     <MainLayout
-      meta={
-        <Meta
-          title="Next.js Tailwind Enterprise Starter"
-          description="Starter template to make a great Next Js Project"
-        />
-      }
+    // meta={
+    //   <Meta
+    //     title="Next.js Tailwind Enterprise Starter"
+    //     description="Starter template to make a great Next Js Project"
+    //   />
+    // }
     >
       <div className="h-[100vh] bg-gradient-to-br from-green-300/50 to-sky-800/50 flex items-center justify-center px-5">
         <div className="flex flex-col justify-center bg-white rounded-lg shadow-2xl p-md sm:p-lg max-w-md">

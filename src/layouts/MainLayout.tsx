@@ -1,14 +1,18 @@
 import type { ReactNode } from 'react';
+import { Meta } from './Meta';
 
 type MainLayoutProps = {
-  meta: ReactNode;
   children: ReactNode;
 };
 
-export function MainLayout({ meta, children }: MainLayoutProps) {
+export function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="w-full antialiased">
-      {meta}
+      <Meta
+        title="Next Auth Demo"
+        description="A demo project to understand Next Auth"
+      />
+
       <div>{children}</div>
     </div>
   );
