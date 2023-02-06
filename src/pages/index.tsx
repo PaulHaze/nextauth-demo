@@ -1,24 +1,65 @@
 import type { NextPage } from 'next';
-import { MainLayout } from '@/layouts';
+import Link from 'next/link';
+import { useSession, signIn, signOut } from 'next-auth/react';
+
+import { Meta, MainLayout } from '@/layouts';
 
 const Home: NextPage = () => {
+  const { data: session, status } = useSession();
+
+  if (status === 'loading') {
+    return <div className="">Loading</div>;
+  }
   return (
     <MainLayout
-    // meta={
-    //   <Meta
-    //     title="Next.js Tailwind Enterprise Starter"
-    //     description="Starter template to make a great Next Js Project"
-    //   />
-    // }
+      meta={
+        <Meta
+          title="Auth Example With Hamed"
+          description="Follow along code with Hamed"
+        />
+      }
     >
-      <div className="h-[100vh] bg-gradient-to-br from-green-300/50 to-sky-800/50 flex items-center justify-center px-5">
-        <div className="flex flex-col justify-center bg-white rounded-lg shadow-2xl p-md sm:p-lg max-w-md">
-          <h1 className="font-bold text-center text-transparent bg-clip-text bg-gradient-to-b from-indigo-400 to-violet-800">
-            Im your new Tailwind Project!
-          </h1>
-          <p className="text-[#504e63] text-center">
-            Delete this and make something great!
-          </p>
+      <div className="w-full h-screen p-8">
+        <h1>Auth Demo</h1>
+
+        <div className="flex gap-4 mt-5 max-w-xs">
+          <Link
+            className="bg-sky-600 px-5 py-3 rounded-sm text-white font-bold text-sm self-center flex-grow"
+            href="/api/auth/signin"
+          >
+            Sign in Link
+          </Link>
+          <button
+            onClick={() => signIn()}
+            className="text-sm border rounded-sm px-5 py-3 shadow-sm flex-grow"
+          >
+            Sign In Button
+          </button>
+        </div>
+        <div className="flex gap-4 mt-5 max-w-xs">
+          <Link
+            className="bg-sky-600 px-5 py-3 rounded-sm text-white font-bold text-sm self-center flex-grow"
+            href="/api/auth/signout"
+          >
+            Sign Out Link
+          </Link>
+          <button
+            onClick={() => signOut()}
+            className="text-sm border rounded-sm px-5 py-3 shadow-sm flex-grow"
+          >
+            Sign Out Button
+          </button>
+        </div>
+
+        <div className="font-semibold text-slate-700 mt-5">
+          Status: {status}
+        </div>
+        <div className="font-semibold text-slate-700 mt-5">
+          {session ? (
+            <pre>{JSON.stringify(session, null, 2)}</pre>
+          ) : (
+            'No Active Sessions'
+          )}
         </div>
       </div>
     </MainLayout>
