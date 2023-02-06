@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
-import { Meta, MainLayout } from '@/layouts';
+import { MainLayout } from '@/layouts';
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
@@ -11,14 +11,7 @@ const Home: NextPage = () => {
     return <div className="">Loading</div>;
   }
   return (
-    <MainLayout
-      meta={
-        <Meta
-          title="Auth Example With Hamed"
-          description="Follow along code with Hamed"
-        />
-      }
-    >
+    <MainLayout>
       <div className="w-full h-screen p-8">
         <h1>Auth Demo</h1>
 
